@@ -37,12 +37,12 @@ const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
 		</>
 	);
 
-	const buttonClasses = `flex items-center gap-3 px-4 py-2 border border-button bg-primaryBg text-button hover:text-primaryBg hover:bg-button transition ${className}`;
+	const buttonClasses = `flex items-center gap-3 px-4 py-2 border border-button bg-primaryBg text-button hover:text-primaryBg hover:bg-button transition`;
 
 	// If href is provided, render as Link with anchor tag
 	if (href) {
 		return (
-			<Link href={href} className={buttonClasses}>
+			<Link href={href} className={cn(buttonClasses, className)} onClick={onClick}>
 				{buttonContent}
 			</Link>
 		);

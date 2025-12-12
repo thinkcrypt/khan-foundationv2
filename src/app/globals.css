@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 
@@ -17,6 +18,22 @@
 	--sectionGapLg: 64px;
 	--sectionGapSm: 44px;
 	--pagePadX: 80px;
+
+	/* Khan Foundation Colors */
+	--navy-dark: 213 52% 15%;
+	--navy: 213 52% 24%;
+	--navy-light: 213 45% 35%;
+	--sky: 199 89% 48%;
+	--sky-light: 199 89% 65%;
+	--gold: 45 93% 47%;
+	--gold-light: 45 93% 60%;
+	--primary-foreground: 0 0% 100%;
+
+	/* Gradients */
+	--gradient-navy: linear-gradient(135deg, hsl(213, 52%, 15%) 0%, hsl(213, 52%, 30%) 100%);
+	--gradient-hero: linear-gradient(135deg, hsl(213, 52%, 18%) 0%, hsl(213, 45%, 28%) 50%, hsl(199, 60%, 35%) 100%);
+	--gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 30%, 98%) 100%);
+	--gradient-gold: linear-gradient(135deg, hsl(45, 93%, 47%) 0%, hsl(38, 92%, 50%) 100%);
 }
 
 @theme inline {
@@ -34,6 +51,15 @@
 	--spacing-sectionGapSm: var(--sectionGapSm);
 	--spacing-pagePadX: var(--pagePadX);
 
+	/* Khan Foundation Colors */
+	--color-navy-dark: hsl(var(--navy-dark));
+	--color-navy: hsl(var(--navy));
+	--color-navy-light: hsl(var(--navy-light));
+	--color-sky: hsl(var(--sky));
+	--color-sky-light: hsl(var(--sky-light));
+	--color-gold: hsl(var(--gold));
+	--color-gold-light: hsl(var(--gold-light));
+
 	/* custom breakpoints */
 	--breakpoint-xs: 30rem;
 	--breakpoint-sm: 40rem;
@@ -44,8 +70,53 @@
 }
 
 body {
-	font-family: var(--font-primary);
+	font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+/* Khan Foundation Utility Classes */
+.bg-gradient-navy {
+	background: var(--gradient-navy);
+}
+
+.bg-gradient-hero {
+	background: var(--gradient-hero);
+}
+
+.bg-gradient-card {
+	background: var(--gradient-card);
+}
+
+.bg-gradient-gold {
+	background: var(--gradient-gold);
+}
+
+.text-navy-dark {
+	color: hsl(var(--navy-dark));
+}
+
+.text-gold {
+	color: hsl(var(--gold));
+}
+
+.link-underline {
+	position: relative;
+}
+
+.link-underline::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: currentColor;
+	transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+	width: 100%;
+}
+
 /* SWIPER JS CSS */
 .swiper-pagination-bullet {
 	/* background-color: var(--color-borderBg) !important; */
